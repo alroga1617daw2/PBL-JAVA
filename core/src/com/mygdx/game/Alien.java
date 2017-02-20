@@ -27,7 +27,7 @@ public class Alien {
         //FIN TEXTURAS
 
         // SPRITES INICIO
-        Sprite alienSprite = new Sprite(alienTexture, width, height - 5);
+        Sprite alienSprite = new Sprite(alienTexture, 20, 20);
         // Enemy.add(new Sprite(Alien,20,0));
         //SPRITES FIN
     }
@@ -36,21 +36,18 @@ public class Alien {
         height = Gdx.graphics.getHeight();
         width = Gdx.graphics.getWidth();
         alienTexture = new Texture("Space_Invaders_Alien20.png");
-        int x=-30 ,num1=height-30, num2=height-120;
+        int x=-30 ,numy1=height-30, numy2=height-120, numx1=0, numx2=620;
 
-        for(int i=0; i<20;i++) { //20 aliens en el arrayList
+        for(int i=0; i<5;i++) { //20 aliens en el arrayList
             aliens.add(new Sprite(alienTexture));
         }
 
 
         for (Sprite a : Alien.aliens) { //indicamos la posicion inicial de cada alien
-            if(x>600){
-                x-=30;
-            }else{
-                x += 30;
-            }
-            int numAleatorio=(int)Math.floor(Math.random()*(num1-(num2+1))+(num2));
-            a.setPosition(x, numAleatorio);
+
+            int numAleatorioy=(int)Math.floor(Math.random()*(numy1-(numy2+1))+(numy2));
+            int numAleatoriox=(int)Math.floor(Math.random()*(numx1-(numx2+1))+(numx2));
+            a.setPosition(numAleatoriox, numAleatorioy);
 
         }
 
