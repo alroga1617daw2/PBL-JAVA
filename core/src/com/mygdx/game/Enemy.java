@@ -69,7 +69,7 @@ spawn();
             if (y > 5) {
                 y -= 0.5f;
                 a.setPosition(x, y);
-                System.out.println(a.getY());
+                System.out.println(a.getX());
             } else {
                 System.out.println("Perder vidas");
             }
@@ -77,6 +77,7 @@ spawn();
     }
 
     public void spawn(){
+
         Timer.schedule(new Timer.Task(){
             @Override
             public void run(){
